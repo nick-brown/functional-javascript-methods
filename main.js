@@ -3,7 +3,7 @@
 // the cheater way
 var reduce = Function.call.bind(Array.prototype.reduce);
 
-// actually applying some thought
+// actually applying some thought -- this function differes slightly from borrowing Array's prototype by switching the placement of the fn and collection parameters
 var reduce = function(fn, collection, startingAcc) {
     let acc = undefined;
     let j = 0;
@@ -24,10 +24,10 @@ var reduce = function(fn, collection, startingAcc) {
 
 // we'll test with a simple sum example
 let sum = (acc, x) => x + acc;
-reduce(sum, [1,2,3]) // 6
+reduce(sum, [1,2,3]); // 6
 
 // let's use reduce to create our own map function
-let map = (fn, collection) => reduce((acc, x) => acc.concat(fn(x)), collection, [])
+let map = (fn, collection) => reduce((acc, x) => acc.concat(fn(x)), collection, []);
 
 // and once again will test with a simple addition function
 let addOne = (a) => a + 1;
