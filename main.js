@@ -3,7 +3,7 @@
 // the cheater way
 var reduce = Function.call.bind(Array.prototype.reduce);
 
-// actually applying some thought -- this function differes slightly from borrowing Array's prototype by switching the placement of the fn and collection parameters
+// actually applying some thought -- this function differs slightly from borrowing Array's prototype by switching the placement of the fn and collection parameters
 var reduce = function(fn, collection, startingAcc) {
     let acc = undefined;
     let j = 0;
